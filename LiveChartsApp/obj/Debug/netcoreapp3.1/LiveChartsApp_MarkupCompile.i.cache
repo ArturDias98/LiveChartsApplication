@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\Artur Dias\Documents\Projetos\LiveChartsApp\LiveChartsApplication\LiveChartsApp\App.xaml
-11407045341
+1-1351704627
 
-51350824175
+7-259528436
 220465817673
-MainWindow.xaml;
+Views\ShellView.xaml;
 
-False
+True
 
