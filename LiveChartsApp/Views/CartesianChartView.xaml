@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LiveChartsApp.Views"
              
-             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf" xmlns:viewmodels="clr-namespace:LiveChartsApp.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:CartesianChartViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -27,6 +27,16 @@
             <lvc:CartesianChart.Series>
                 <lvc:LineSeries Values="{Binding Values}" ScalesYAt="0"/>
             </lvc:CartesianChart.Series>
+            <lvc:CartesianChart.AxisX>
+                <lvc:Axis LabelFormatter="{Binding DateTimeFormatter}" 
+                      MaxValue="{Binding AxisMax}" 
+                      MinValue="{Binding AxisMin}"
+                      Unit="{Binding AxisUnit}">
+                    <lvc:Axis.Separator>
+                        <lvc:Separator Step="{Binding AxisStep}" />
+                    </lvc:Axis.Separator>
+                </lvc:Axis>
+            </lvc:CartesianChart.AxisX>
         </lvc:CartesianChart>
     </Grid>
 </UserControl>
