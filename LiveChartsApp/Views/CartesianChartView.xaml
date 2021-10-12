@@ -15,14 +15,14 @@
             </Style>
         </Grid.Resources>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="800"/>
+            <ColumnDefinition MinWidth="800"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="450"/>
+            <RowDefinition MinHeight="450"/>
         </Grid.RowDefinitions>
         <lvc:CartesianChart Grid.Row="0">
             <lvc:CartesianChart.AxisY>
-                <lvc:Axis Foreground="DodgerBlue" Title="Blue Axis"/>
+                <lvc:Axis Foreground="DodgerBlue"/>
             </lvc:CartesianChart.AxisY>
             <lvc:CartesianChart.Series>
                 <lvc:LineSeries Values="{Binding Values}" ScalesYAt="0"/>

@@ -9,11 +9,11 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="450"/>
+            <RowDefinition MinHeight="450"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="390"/>
-            <ColumnDefinition Width="390"/>
+            <ColumnDefinition MinWidth="400"/>
+            <ColumnDefinition MinWidth="400"/>
         </Grid.ColumnDefinitions>
         <lvc:Gauge Grid.Row="0" Grid.Column="0" Margin="5"
                    Uses360Mode="True"
