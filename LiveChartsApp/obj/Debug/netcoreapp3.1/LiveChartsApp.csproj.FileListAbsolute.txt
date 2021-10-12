@@ -112,3 +112,7 @@ C:\Users\Artur Dias\Documents\Projetos\LiveChartsApp\LiveChartsApplication\LiveC
 C:\Users\Artur Dias\Documents\Projetos\LiveChartsApp\LiveChartsApplication\LiveChartsApp\obj\Debug\netcoreapp3.1\LiveChartsApp.genruntimeconfig.cache
 C:\Users\Artur Dias\Documents\Projetos\LiveChartsApp\LiveChartsApplication\LiveChartsApp\obj\Debug\netcoreapp3.1\Views\ShellView.g.cs
 C:\Users\Artur Dias\Documents\Projetos\LiveChartsApp\LiveChartsApplication\LiveChartsApp\obj\Debug\netcoreapp3.1\Views\ShellView.baml
+C:\Users\Artur Dias\Documents\Projetos\LiveChartsApp\LiveChartsApplication\LiveChartsApp\obj\Debug\netcoreapp3.1\Views\CartesianChartView.g.cs
+C:\Users\Artur Dias\Documents\Projetos\LiveChartsApp\LiveChartsApplication\LiveChartsApp\obj\Debug\netcoreapp3.1\Views\GaugeChartView.g.cs
+C:\Users\Artur Dias\Documents\Projetos\LiveChartsApp\LiveChartsApplication\LiveChartsApp\obj\Debug\netcoreapp3.1\Views\CartesianChartView.baml
+C:\Users\Artur Dias\Documents\Projetos\LiveChartsApp\LiveChartsApplication\LiveChartsApp\obj\Debug\netcoreapp3.1\Views\GaugeChartView.baml

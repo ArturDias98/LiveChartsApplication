@@ -5,7 +5,7 @@ using System.Text;
 
 namespace LiveChartsApp.ViewModels
 {
-    public class ShellViewModel : Conductor<object>
+    public class CartesianChartViewModel : Screen
     {
     }
 }

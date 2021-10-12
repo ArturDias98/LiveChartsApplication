@@ -13,6 +13,14 @@
         mc:Ignorable="d"
         Title="ShellView" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ContentControl Grid.Row="0" Grid.Column="0" x:Name="GaugeChartViewModel"></ContentControl>
+        <ContentControl Grid.Row="1" Grid.Column="0" x:Name="CartesianChartViewModel"></ContentControl>
     </Grid>
 </Window>
