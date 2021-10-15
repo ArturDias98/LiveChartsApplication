@@ -21,5 +21,7 @@ namespace LiveChartsApp.Views
         {
             InitializeComponent();
         }
+
+        
     }
 }
