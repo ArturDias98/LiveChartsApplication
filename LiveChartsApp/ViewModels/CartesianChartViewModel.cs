@@ -13,10 +13,27 @@ namespace LiveChartsApp.ViewModels
         private ChartValues<MeasureModel> _values;
         private double _axisMax;
         private double _axisMin;
+        private double _axisStep;
 
         public Func<double, string> DateTimeFormatter { get; set; }
-        public double AxisStep { get; set; }
+        
         public double AxisUnit { get; set; }
+
+        
+
+        public double AxisStep
+        {
+            get 
+            { 
+                return _axisStep; 
+            }
+            set 
+            { 
+                _axisStep = value;
+                NotifyOfPropertyChange(() => AxisStep);
+            }
+        }
+
         public ChartValues<MeasureModel> Values
         {
             get

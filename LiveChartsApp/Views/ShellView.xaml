@@ -11,7 +11,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="ShellView" MinHeight="1000" MinWidth="1000">
+        Title="ShellView" MinHeight="1080" MinWidth="1920">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Closing">
             <cal:ActionMessage MethodName="CloseWindow">
@@ -24,10 +24,10 @@
             <ColumnDefinition ></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <ContentControl Grid.Row="0" Grid.Column="0" x:Name="GaugeChartViewModel"></ContentControl>
+        <ContentControl Grid.Row="0" Grid.Column="0" x:Name="GaugeChartViewModel" Margin="10"></ContentControl>
         <ContentControl Grid.Row="1" Grid.Column="0" x:Name="CartesianChartViewModel"></ContentControl>
     </Grid>
 </Window>

@@ -14,29 +14,35 @@
                 <Setter Property="IsEnabled" Value="False"></Setter>
             </Style>
         </Grid.Resources>
-        <Grid.ColumnDefinitions>
+        <!--<Grid.ColumnDefinitions>
             <ColumnDefinition MinWidth="800"/>
-        </Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>-->
         <Grid.RowDefinitions>
-            <RowDefinition MinHeight="450"/>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <lvc:CartesianChart Grid.Row="0">
+        <lvc:CartesianChart Grid.Row="2" DataTooltip="{x:Null}" Hoverable="False" Margin="10" DisableAnimations="False">
             <lvc:CartesianChart.AxisY>
-                <lvc:Axis Foreground="DodgerBlue"/>
+                <lvc:Axis Foreground="DodgerBlue" />
             </lvc:CartesianChart.AxisY>
             <lvc:CartesianChart.Series>
-                <lvc:LineSeries Values="{Binding Values}" ScalesYAt="0"/>
+                <lvc:LineSeries Values="{Binding Values, Mode=Default}" ScalesYAt="0" Fill="Transparent" LineSmoothness="1" PointGeometry=""/>
             </lvc:CartesianChart.Series>
+           
             <lvc:CartesianChart.AxisX>
-                <lvc:Axis LabelFormatter="{Binding DateTimeFormatter}" 
+                <lvc:Axis
+                      LabelFormatter="{Binding DateTimeFormatter}" 
                       MaxValue="{Binding AxisMax}" 
-                      MinValue="{Binding AxisMin}"
-                      Unit="{Binding AxisUnit}">
+                      MinValue="{Binding AxisMin}"                     
+                      DisableAnimations="True">
                     <lvc:Axis.Separator>
                         <lvc:Separator Step="{Binding AxisStep}" />
                     </lvc:Axis.Separator>
                 </lvc:Axis>
             </lvc:CartesianChart.AxisX>
+        
         </lvc:CartesianChart>
     </Grid>
 </UserControl>
