@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\Artur Dias\Documents\Projetos\LiveChartsApp\LiveChartsApplication\LiveChartsApp\App.xaml
-3-292605865
+4375488662
 
-10-1884129225
-220465817673
-Views\CartesianChartView.xaml;Views\GaugeChartView.xaml;Views\ShellView.xaml;
+141933119938
+220647628866
+Views\CartesianChartView.xaml;Views\ConnectionView.xaml;Views\GaugeChartView.xaml;Views\ShellView.xaml;
 
 False
 

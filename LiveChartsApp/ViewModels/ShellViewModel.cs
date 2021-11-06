@@ -29,7 +29,7 @@ namespace LiveChartsApp.ViewModels
             CartesianChartViewModel.AxisMax = DateTime.Now.Ticks ; 
             CartesianChartViewModel.AxisMin = DateTime.Now.Ticks - TimeSpan.FromSeconds(5).Ticks;
             CartesianChartViewModel.Values = new ChartValues<MeasureModel>();
-
+            ConnectionViewModel = new ConnectionViewModel(); 
             plotTimer.Elapsed += plotTimer_ElapsedTime;
             plotTimer.Start();
         }
@@ -38,6 +38,7 @@ namespace LiveChartsApp.ViewModels
         {
             var plotGauge1 = random.Next(50, 100);
             var plotGauge2 = random.Next(50, 250);
+            ConnectionViewModel.CheckNewCommPort();
             var now = DateTime.Now;
             Application.Current.Dispatcher.BeginInvoke(new System.Action(() => {
                 CartesianChartViewModel.Values.Add(new MeasureModel
@@ -59,6 +60,7 @@ namespace LiveChartsApp.ViewModels
             
         }
         
+        public ConnectionViewModel ConnectionViewModel { get; set; }
         public GaugeChartViewModel GaugeChartViewModel { get; set; }
         public CartesianChartViewModel CartesianChartViewModel { get; set; }
     }

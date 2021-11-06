@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ShQkAXqHvKt6IhYVoKaamr7B3bAsCV3BR0EPy1z92yAD2jHE3L5JZHzRD6R8Ik1P0XA9YW3hOXTTLVeA4IlsMg==",
+  "dgSpecHash": "O3OyTbR0f/LM7FQqUTpgTMNyY8kxJHb+FX5N5dHSuaL5Y3N2YSdpc5AmW3rB58S4xjDU3X3EaravvTEL+PVJ6g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Artur Dias\\Documents\\Projetos\\LiveChartsApp\\LiveChartsApplication\\LiveChartsApp\\LiveChartsApp.csproj",
   "expectedPackageFiles": [
@@ -79,7 +79,11 @@
     "C:\\Users\\Artur Dias\\.nuget\\packages\\system.text.encoding.codepages\\5.0.0\\system.text.encoding.codepages.5.0.0.nupkg.sha512",
     "C:\\Users\\Artur Dias\\.nuget\\packages\\system.threading.accesscontrol\\5.0.0\\system.threading.accesscontrol.5.0.0.nupkg.sha512",
     "C:\\Users\\Artur Dias\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
-    "C:\\Users\\Artur Dias\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
+    "C:\\Users\\Artur Dias\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Artur Dias\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.20\\microsoft.netcore.app.host.win-x64.3.1.20.nupkg.sha512",
+    "C:\\Users\\Artur Dias\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\Artur Dias\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\Artur Dias\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
   ],
   "logs": [
     {
