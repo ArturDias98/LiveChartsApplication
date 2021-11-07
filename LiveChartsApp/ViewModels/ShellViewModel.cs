@@ -57,8 +57,10 @@ namespace LiveChartsApp.ViewModels
         public void CloseWindow()
         {
             plotTimer.Stop();
+            ConnectionViewModel.CloseSerialPort();
             
         }
+
         
         public ConnectionViewModel ConnectionViewModel { get; set; }
         public GaugeChartViewModel GaugeChartViewModel { get; set; }

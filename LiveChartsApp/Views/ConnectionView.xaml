@@ -3,15 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:LiveChartsApp.Views" xmlns:cal="http://caliburnmicro.com" xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:local="clr-namespace:LiveChartsApp.Views" 
+             xmlns:cal="http://caliburnmicro.com" 
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors" 
+             xmlns:viewmodels="clr-namespace:LiveChartsApp.ViewModels" 
+             d:DataContext="{d:DesignInstance Type=viewmodels:ConnectionViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <i:Interaction.Triggers>
-        <i:EventTrigger EventName="Closing">
-            <cal:ActionMessage MethodName="CloseWindow">
-            </cal:ActionMessage>
-        </i:EventTrigger>
-    </i:Interaction.Triggers>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5" />
@@ -30,14 +29,21 @@
             <RowDefinition Height="5"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="1" Grid.Column="2" Text="Configure" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15"/>
-        <ComboBox Grid.Row="2" Grid.Column="2"  x:Name="CommPortsList" SelectedItem="{Binding SelectedCommPort, Mode=OneWayToSource}"/>
-        <ComboBox Grid.Row="3" Grid.Column="2"  x:Name="BaudRateList" SelectedItem="{Binding SelectedBaudRate, Mode=OneWayToSource}"/>
-        <ComboBox Grid.Row="4" Grid.Column="2"  x:Name="ParityList" SelectedItem="{Binding SelectedParity, Mode=OneWayToSource}"/>
-        <ComboBox Grid.Row="5" Grid.Column="2"  x:Name="StopBitlist" SelectedItem="{Binding SelectedStopBit, Mode=OneWayToSource}"/>
+        <ComboBox Grid.Row="2" Grid.Column="2"  x:Name="CommPortsList" SelectedItem="{Binding SelectedCommPort, Mode=OneWayToSource}" SelectedIndex="{Binding CommPortIndex}"/>
+        <ComboBox Grid.Row="3" Grid.Column="2"  x:Name="BaudRateList" SelectedItem="{Binding SelectedBaudRate, Mode=OneWayToSource}" SelectedIndex="{Binding BaudRateIndex}"/>
+        <ComboBox Grid.Row="4" Grid.Column="2"  x:Name="ParityList" SelectedItem="{Binding SelectedParity, Mode=OneWayToSource}" SelectedIndex="{Binding ParityIndex}"/>
+        <ComboBox Grid.Row="5" Grid.Column="2"  x:Name="StopBitlist" SelectedItem="{Binding SelectedStopBit, Mode=OneWayToSource}" SelectedIndex="{Binding StopBitIndex}"/>
         <TextBlock Grid.Row="2" Grid.Column="1" Text="Port: " VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Row="3" Grid.Column="1" Text="Baud: " VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Row="4" Grid.Column="1" Text="Parity: " VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Row="5" Grid.Column="1" Text="Stop Bit: " VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <Button   Grid.Row="6" Grid.Column="2" x:Name="ConnectButton" Content="Connect" IsEnabled="{Binding IsButtonEnable}"/>
+        <Button   Grid.Row="6" Grid.Column="2" x:Name="ConnectButtonClick" Content="Connect" IsEnabled="{Binding IsButtonEnable}">
+            <!--<i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <cal:ActionMessage MethodName="Connect">
+                    </cal:ActionMessage>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>-->
+        </Button>
     </Grid>
 </UserControl>

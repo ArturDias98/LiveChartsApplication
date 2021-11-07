@@ -6,10 +6,10 @@ using System.Linq;
 
 namespace LiveChartsApp.Models
 {
-    public class SerialConfig
+    public class SerialConfigModel
     {
         private List<string> commports = new List<string>();
-        public SerialConfig()
+        public SerialConfigModel()
         {                    
             GetCommPorts();
             SetBaudRates();
@@ -23,24 +23,24 @@ namespace LiveChartsApp.Models
             return commports;   
         }
 
-        public List<string> SetBaudRates()
+        public List<int> SetBaudRates()
         {
-            string[] list = { "9600", "38400", "115200"};
+            int[] list = { 9600, 38400, 115200};
             var baudList = list.ToList();
             return baudList;    
         }
-        public List<string> SetParity()
+        public List<Parity> SetParity()
         {
 
-            string[] parities = {"None", "Odd", "Even", "Mark", "Space"};
+            Parity[] parities = { Parity.None, Parity.Odd, Parity.Even, Parity.Mark, Parity.Space };
             var parity = parities.ToList();           
             return parity;  
         }
 
-        public List<string> SetStopBit()
+        public List<StopBits> SetStopBit()
         {
 
-            string[] stop = { "None", "One", "Two", "One point Five"};
+            StopBits[] stop = { StopBits.One, StopBits.Two, StopBits.OnePointFive};
             var stopBit = stop.ToList();
             return stopBit;
         }
