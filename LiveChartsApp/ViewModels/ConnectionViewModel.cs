@@ -34,29 +34,28 @@ namespace LiveChartsApp.ViewModels
             
 
             SerialPort = new SerialPort();
+            SerialConfig = new SerialConfigModel();
 
-            ComboBoxCommPort = new ComboboxModel<string>();
-            comboBoxcommport.SelectedIndex = 0;
+            ComboBoxCommPort = new ComboboxModel<string>();           
             ComboBoxCommPort.List = new BindableCollection<string>();
-            
+            ComboBoxCommPort.SetItems(SerialConfig.GetCommPorts());
+            ComboBoxCommPort.SelectedIndex = 0;
+
             ComboBoxBaudRate = new ComboboxModel<int>();
             ComboBoxBaudRate.List = new BindableCollection<int>();
-            baudrate.SelectedIndex = 0;
+            ComboBoxBaudRate.SetItems(SerialConfig.SetBaudRates());
+            ComboBoxBaudRate.SelectedIndex = 0;            
 
             ComboBoxParity = new ComboboxModel<Parity>();
             ComboBoxParity.List = new BindableCollection<Parity>(); 
-            parity.SelectedIndex = 0;   
-
+            ComboBoxParity.SetItems(SerialConfig.SetParity());
+            ComboBoxParity.SelectedIndex = 0;   
+            
             ComboBoxStopBit = new ComboboxModel<StopBits>();
             ComboBoxStopBit.List = new BindableCollection<StopBits>();
-            stopbit.SelectedIndex = 0;
-            
-            SerialConfig = new SerialConfigModel();           
-            
-            SetCommPorts(SerialConfig.GetCommPorts());
-            SetBaudRates(SerialConfig.SetBaudRates());
-            SetParity(SerialConfig.SetParity());
-            SetStopBit(SerialConfig.SetStopBit());
+            ComboBoxStopBit.SetItems(SerialConfig.SetStopBit());
+            ComboBoxStopBit.SelectedIndex = 0;
+
         }
 
         //Public Variables
@@ -131,44 +130,6 @@ namespace LiveChartsApp.ViewModels
         }
 
         //Private Methods
-        private void SetCommPorts(List<string> list)
-        {
-            int i = 0;
-            foreach (var item in list)
-            {
-
-                comboBoxcommport.List.Add(list[i]);
-                i++;
-                                   
-            }
-        }
-        private void SetBaudRates(List<int> list)
-        {
-            int i = 0;
-            foreach (var item in list)
-            {
-                baudrate.List.Add(list[i]);
-                i++;
-            }
-        }
-        private void SetParity(List<Parity> list)
-        {
-            int i = 0;
-            foreach (var item in list)
-            {
-                parity.List.Add(list[i]);
-                i++;
-            }
-        }
-        private void SetStopBit(List<StopBits> list)
-        {
-            int i = 0;
-            foreach (var item in list)
-            {
-                stopbit.List.Add(list[i]);
-                i++;
-            }
-        }
        
         //Public Methods
         public void CheckNewCommPort()
@@ -177,10 +138,8 @@ namespace LiveChartsApp.ViewModels
             if (SerialConfig.CheckForNewPorts())
             {
                 comboBoxcommport.List.Clear();
-                SetCommPorts(SerialConfig.GetCommPorts());
+                ComboBoxCommPort.SetItems(SerialConfig.GetCommPorts());
                 comboBoxcommport.SelectedIndex = 0;
-
-
             }
 
         }
