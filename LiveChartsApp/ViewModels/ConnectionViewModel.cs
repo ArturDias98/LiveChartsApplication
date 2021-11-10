@@ -13,97 +13,69 @@ namespace LiveChartsApp.ViewModels
     public class ConnectionViewModel : Screen
     {      
         //Private Variables
-        //COMM PORT->
+ 
         private SerialConfigModel SerialConfig;
-        private BindableCollection<string> commports;
-        private string selectedcommport;
-        private int commportindex;
-        //<-COMM PORT
         
-        //BAUD RATE->
-        private BindableCollection<int> baudrate;
-        private int selectedbaudrate;
-        private int baudrateindex;
-        //<-BAUD RATE
+        private ComboboxModel<string> comboBoxcommport;
+         
+        private ComboboxModel<int> baudrate;
         
-        //PARITY->
-        private BindableCollection<Parity> parity;
-        private Parity selectedparity;
-        private int parityindex;
-        //<-PARITY
-        
-        //STOP BIT->
-        private BindableCollection<StopBits> stopbit;
-        private StopBits selectedstopbit;
-        private int stopbitindex;
-        //<-STOP BIT
+        private ComboboxModel<Parity> parity;
+
+        private ComboboxModel<StopBits> stopbit;
 
         private bool isbuttonenable;
+
         private SerialPort SerialPort;
 
         public ConnectionViewModel()
         {
             IsButtonEnable = true;
-            commportindex = 0;
-            baudrateindex = 0;
-            parityindex = 0;
-            stopbitindex = 0;
+            
+
             SerialPort = new SerialPort();
-            CommPortsList = new BindableCollection<string>();
-            BaudRateList = new BindableCollection<int>();
-            ParityList = new BindableCollection<Parity>();
-            StopBitlist = new BindableCollection<StopBits>();
+
+            ComboBoxCommPort = new ComboboxModel<string>();
+            comboBoxcommport.SelectedIndex = 0;
+            ComboBoxCommPort.List = new BindableCollection<string>();
+            
+            ComboBoxBaudRate = new ComboboxModel<int>();
+            ComboBoxBaudRate.List = new BindableCollection<int>();
+            baudrate.SelectedIndex = 0;
+
+            ComboBoxParity = new ComboboxModel<Parity>();
+            ComboBoxParity.List = new BindableCollection<Parity>(); 
+            parity.SelectedIndex = 0;   
+
+            ComboBoxStopBit = new ComboboxModel<StopBits>();
+            ComboBoxStopBit.List = new BindableCollection<StopBits>();
+            stopbit.SelectedIndex = 0;
+            
             SerialConfig = new SerialConfigModel();           
+            
             SetCommPorts(SerialConfig.GetCommPorts());
             SetBaudRates(SerialConfig.SetBaudRates());
             SetParity(SerialConfig.SetParity());
             SetStopBit(SerialConfig.SetStopBit());
-        }      
+        }
 
         //Public Variables
-        //COMM PORT->
-        public BindableCollection<string>  CommPortsList
+
+        public ComboboxModel<string> ComboBoxCommPort
         {
             get 
             { 
-                return commports; 
+                return comboBoxcommport; 
             }
             set 
-            { 
-                commports = value;
+            {
+                comboBoxcommport = value;
                 
-                NotifyOfPropertyChange(() => CommPortsList);
+                NotifyOfPropertyChange(() => ComboBoxCommPort);
             }
         }
-        public string SelectedCommPort
-        {
-            get
-            {
-                return selectedcommport;
-            }
-            set
-            {
-                selectedcommport = value;
-                IsButtonEnable = true;
-                NotifyOfPropertyChange(() => SelectedCommPort);
-            }
-        }
-        public int CommPortIndex
-        {
-            get
-            {
-                return commportindex;
-            }
-            set
-            {
-                commportindex = value;
-                NotifyOfPropertyChange(() => CommPortIndex);
-            }
-        }
-        //<-COMM PORT
 
-        //BAUD RATE->
-        public BindableCollection<int> BaudRateList
+        public ComboboxModel<int> ComboBoxBaudRate
         {
             get
             {
@@ -113,38 +85,11 @@ namespace LiveChartsApp.ViewModels
             {
                 baudrate = value;
                 
-                NotifyOfPropertyChange(() => BaudRateList);
+                NotifyOfPropertyChange(() => ComboBoxBaudRate);
             }
         }
-        public int SelectedBaudRate
-        {
-            get
-            {
-                return selectedbaudrate;
-            }
-            set
-            {
-                selectedbaudrate = value;
-                IsButtonEnable = true;
-                NotifyOfPropertyChange(() => SelectedBaudRate);
-            }
-        }
-        public int BaudRateIndex
-        {
-            get
-            {
-                return baudrateindex;
-            }
-            set
-            {
-                baudrateindex = value;
-                NotifyOfPropertyChange(() => BaudRateIndex);
-            }
-        }
-        //<-BAUD RATE
 
-        //PARITY->
-        public BindableCollection<Parity> ParityList
+        public ComboboxModel<Parity> ComboBoxParity
         {
             get
             {
@@ -154,38 +99,11 @@ namespace LiveChartsApp.ViewModels
             {
                 parity = value;
                 
-                NotifyOfPropertyChange(() => ParityList);
+                NotifyOfPropertyChange(() => ComboBoxParity);
             }
         }
-        public Parity SelectedParity
-        {
-            get
-            {
-                return selectedparity;
-            }
-            set
-            {
-                selectedparity = value;
-                IsButtonEnable = true;
-                NotifyOfPropertyChange(() => SelectedParity);
-            }
-        }
-        public int ParityIndex
-        {
-            get
-            {
-                return parityindex;
-            }
-            set
-            {
-                parityindex = value;
-                NotifyOfPropertyChange(() => ParityIndex);
-            }
-        }
-        //<-PARITY
 
-        //STOP BIT->
-        public BindableCollection<StopBits> StopBitlist
+        public ComboboxModel<StopBits> ComboBoxStopBit
         {
             get
             {
@@ -195,35 +113,9 @@ namespace LiveChartsApp.ViewModels
             {
                 stopbit = value;
                 
-                NotifyOfPropertyChange(() => StopBitlist);
+                NotifyOfPropertyChange(() => ComboBoxStopBit);
             }
         }             
-        public StopBits SelectedStopBit
-        {
-            get
-            {
-                return selectedstopbit;
-            }
-            set
-            {
-                selectedstopbit = value;
-                IsButtonEnable = true;
-                NotifyOfPropertyChange(() => SelectedStopBit);
-            }
-        }
-        public int StopBitIndex
-        {
-            get 
-            { 
-                return stopbitindex; 
-            }
-            set 
-            { 
-                stopbitindex = value;
-                NotifyOfPropertyChange(() => StopBitIndex);
-            }
-        }
-        //<-STOP BIT
 
         public bool IsButtonEnable
         {
@@ -245,7 +137,7 @@ namespace LiveChartsApp.ViewModels
             foreach (var item in list)
             {
 
-                commports.Add(list[i]);
+                comboBoxcommport.List.Add(list[i]);
                 i++;
                                    
             }
@@ -255,7 +147,7 @@ namespace LiveChartsApp.ViewModels
             int i = 0;
             foreach (var item in list)
             {
-                baudrate.Add(list[i]);
+                baudrate.List.Add(list[i]);
                 i++;
             }
         }
@@ -264,7 +156,7 @@ namespace LiveChartsApp.ViewModels
             int i = 0;
             foreach (var item in list)
             {
-                parity.Add(list[i]);
+                parity.List.Add(list[i]);
                 i++;
             }
         }
@@ -273,19 +165,20 @@ namespace LiveChartsApp.ViewModels
             int i = 0;
             foreach (var item in list)
             {
-                stopbit.Add(list[i]);
+                stopbit.List.Add(list[i]);
                 i++;
             }
         }
+       
         //Public Methods
         public void CheckNewCommPort()
         {
 
             if (SerialConfig.CheckForNewPorts())
             {
-                commports.Clear();
+                comboBoxcommport.List.Clear();
                 SetCommPorts(SerialConfig.GetCommPorts());
-                CommPortIndex = 0;
+                comboBoxcommport.SelectedIndex = 0;
 
 
             }
@@ -297,10 +190,10 @@ namespace LiveChartsApp.ViewModels
             try
             {
                 IsButtonEnable = false;
-                SerialPort.PortName = SelectedCommPort;
-                SerialPort.BaudRate = SelectedBaudRate;
-                SerialPort.Parity = SelectedParity;
-                SerialPort.StopBits = SelectedStopBit;
+                SerialPort.PortName = ComboBoxCommPort.SelectedItem;
+                SerialPort.BaudRate = ComboBoxBaudRate.SelectedItem;
+                SerialPort.Parity = ComboBoxParity.SelectedItem;
+                SerialPort.StopBits = ComboBoxStopBit.SelectedItem;
                 if (SerialPort.IsOpen)
                 {
                     SerialPort.Close();

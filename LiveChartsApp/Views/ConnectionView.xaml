@@ -29,10 +29,10 @@
             <RowDefinition Height="5"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="1" Grid.Column="2" Text="Configure" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15"/>
-        <ComboBox Grid.Row="2" Grid.Column="2"  x:Name="CommPortsList" SelectedItem="{Binding SelectedCommPort, Mode=OneWayToSource}" SelectedIndex="{Binding CommPortIndex}"/>
-        <ComboBox Grid.Row="3" Grid.Column="2"  x:Name="BaudRateList" SelectedItem="{Binding SelectedBaudRate, Mode=OneWayToSource}" SelectedIndex="{Binding BaudRateIndex}"/>
-        <ComboBox Grid.Row="4" Grid.Column="2"  x:Name="ParityList" SelectedItem="{Binding SelectedParity, Mode=OneWayToSource}" SelectedIndex="{Binding ParityIndex}"/>
-        <ComboBox Grid.Row="5" Grid.Column="2"  x:Name="StopBitlist" SelectedItem="{Binding SelectedStopBit, Mode=OneWayToSource}" SelectedIndex="{Binding StopBitIndex}"/>
+        <ComboBox Grid.Row="2" Grid.Column="2" x:Name="ComboBoxCommPort_List" SelectedItem="{Binding ComboBoxCommPort.SelectedItem, Mode=OneWayToSource}" SelectedIndex="{Binding ComboBoxCommPort.SelectedIndex, Mode=TwoWay}"/>
+        <ComboBox Grid.Row="3" Grid.Column="2"  x:Name="ComboBoxBaudRate_List" SelectedItem="{Binding ComboBoxBaudRate.SelectedItem, Mode=OneWayToSource}" SelectedIndex="{Binding ComboBoxBaudRate.SelectedIndex}"/>
+        <ComboBox Grid.Row="4" Grid.Column="2"  x:Name="ComboBoxParity_List" SelectedItem="{Binding ComboBoxParity.SelectedItem, Mode=OneWayToSource}" SelectedIndex="{Binding ComboBoxParity.SelectedIndex}"/>
+        <ComboBox Grid.Row="5" Grid.Column="2"  x:Name="ComboBoxStopBit_List" SelectedItem="{Binding ComboBoxStopBit.SelectedItem, Mode=OneWayToSource}" SelectedIndex="{Binding ComboBoxStopBit.SelectedIndex}"/>
         <TextBlock Grid.Row="2" Grid.Column="1" Text="Port: " VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Row="3" Grid.Column="1" Text="Baud: " VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBlock Grid.Row="4" Grid.Column="1" Text="Parity: " VerticalAlignment="Center" HorizontalAlignment="Center"/>
